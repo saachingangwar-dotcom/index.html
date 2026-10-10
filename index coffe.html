@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://127.0.0.1:5500/html/index1.html/index%20coffe.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Perfect Brew | Premium Cafe</title>
+    <style>
+        /* --- CSS STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #c5a880; /* Gold/Bronze */
+            --bg-dark: #121212;
+            --bg-light: #1a1a1a;
+            --text-light: #ffffff;
+            --text-muted: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--bg-dark);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b3966e;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            background-color: var(--bg-light);
+            padding: 100px 20px;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .menu-item {
+            background-color: var(--bg-dark);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(197, 168, 128, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-details h3 {
+            margin-bottom: 5px;
+        }
+
+        .item-details p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .item-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(197, 168, 128, 0.1);
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Mobile menu styling can be added via JS */
+            }
+            .hero-content h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+
+
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Brew &amp; Co.</div>
+            <nav>
+                <ul>
+                    <li><a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#home">Home</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#about">About</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#menu">Menu</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#contact">Contact</a></li>
+                     
+    
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Start Your Day With <span>Perfect Coffee</span></h1>
+            <p>Freshly brewed coffee made from premium handpicked beans. Experience the ultimate taste and aroma in every single sip.</p>
+            <a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#menu" class="btn">View Our Menu</a>
+        </div>
+    </section>
+ <!-- image Section -->
+    <section id=" image" class=" image">
+     <div class="image-container"> 
+        <h2 class="section-title"> Your image </h2>
+        <img src="./index coffe_files/coffe photo.jpg" alt="" width="500px" height="400px">
+
+    </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">Our Story</h2>
+        <p>Hum sirf coffee nahi bechte, hum ek experience dete hain. Hamaare yahan har ek cup ko poori shiddat aur perfection ke saath brew kiya jata hai taaki aapko mile sabse shaandar taste. Ek baar aaiye aur farq mehsoos kijiye.</p>
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="menu-container">
+        <h2>class="section-title" style="text-align: center;"&gt;Popular Menu</h2>
+            <div class="menu-grid"><h2 <!--="" item="" 1="" --="">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3>Espresso</h3>
+                        <p>Rich, full-bodied espresso shot.</p>
+                    </div>
+                    <div class="item-price">₹120</div>
+                </div>
+                <!-- Item 2 -->
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3>Cappuccino</h3>
+                        <p>Espresso with steamed milk foam.</p>
+                    </div>
+                    <div class="item-price">₹160</div>
+                </div>
+                <!-- Item 3 -->
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3>Cafe Latte</h3>
+                        <p>Smooth espresso with creamy milk.</p>
+                    </div>
+                    <div class="item-price">₹180</div>
+                </div>
+                <!-- Item 4 -->
+                <div class="menu-item">
+                    <div class="item-details">
+                        <h3>Iced Americano</h3>
+                        <p>Chilled espresso shot over ice.</p>
+                    </div>
+                    <div class="item-price">₹140</div>
+                </div>
+            </h2></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2026 Brew &amp; Co. Cafe. All Rights Reserved.</p>
+        <p style="margin-top: 10px; font-size: 14px;">Open Daily: 08:00 AM - 11:00 PM</p>
+        <p>xyz2233@gmail.com</p>
+        <p>phone number : xxxxxxxxxx </p>
+        <p>instagram id : ______sachin__001</p>
+        <p> telegram id : @hfhrebrv </p>
+        <p>linkdom : ggfrgfyrbv</p>
+    </footer>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+
+</section></section></body></html>
