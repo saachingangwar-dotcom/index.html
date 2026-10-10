@@ -1,344 +1,720 @@
+ /* --- Global Reset & Premium Variable Setup --- */
+:root {
+    --bg-cream: #fdfbf7;
+    --dark-coffee: #2c1a11;
+    --coffee-medium: #4a3525;
+    --accent-gold: #a98467;
+    --light-tan: #f5efe6;
+    --white: #ffffff;
+    --text-main: #3d312a;
+    --text-muted: #6e5d53;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --border-radius-m: 12px;
+    --border-radius-l: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Section Formatting Headers --- */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--dark-coffee);
+    margin-bottom: 12px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* --- Global Actionable Buttons --- */
+.cta-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    border: none;
+}
+
+.primary-btn {
+    background-color: var(--dark-coffee);
+    color: var(--white);
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.secondary-btn:hover {
+    background-color: var(--white);
+    color: var(--dark-coffee);
+    transform: translateY(-2px);
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(44, 26, 17, 0.06);
+    padding: 20px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--dark-coffee);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent-gold);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-coffee);
+    font-weight: 500;
+    margin: 0 20px;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--accent-gold);
+}
+
+.nav-btn {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    background-color: transparent;
+    color: var(--dark-coffee);
+    border: 1.5px solid var(--dark-coffee);
+}
+
+.nav-btn:hover {
+    background-color: var(--dark-coffee);
+    color: var(--white);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 85vh;
+    min-height: 550px;
+    background-image: url('https://unsplash.com');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 24px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(27, 16, 10, 0.7), rgba(44, 26, 17, 0.6));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    margin-bottom: 36px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+.hero-actions .cta-btn {
+    margin: 0 10px;
+}
+
+/* --- Features Section --- */
+.features-section {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--bg-cream);
+    padding: 40px 30px;
+    border-radius: var(--border-radius-m);
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(44, 26, 17, 0.03);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(44, 26, 17, 0.05);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--dark-coffee);
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- About Section --- */
+.about-section {
+    padding: 100px 0;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    border-radius: var(--border-radius-l);
+    box-shadow: 0 20px 40px rgba(44, 26, 17, 0.08);
+    width: 100%;
+    object-fit: cover;
+    height: 480px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--dark-coffee);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+/* --- Menu Cards Section --- */
+.menu-section {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.menu-card {
+    background-color: var(--bg-cream);
+    border-radius: var(--border-radius-m);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(44, 26, 17, 0.04);
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(44, 26, 17, 0.06);
+}
+
+.menu-img-wrapper {
+    height: 220px;
+    overflow: hidden;
+}
+
+.menu-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.menu-card:hover .menu-img-wrapper img {
+    transform: scale(1.06);
+}
+
+.menu-details {
+    padding: 24px;
+}
+
+.menu-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.menu-meta h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--dark-coffee);
+}
+
+.menu-meta .price {
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+}
+
+.menu-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Contact & Hours Styling --- */
+.contact-section {
+    padding: 100px 0;
+}
+
+.contact-container {
+    display: flex;
+    gap: 60px;
+    align-items: stretch;
+}
+
+.contact-info, .contact-form-wrapper {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--dark-coffee);
+    margin-bottom: 16px;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.info-item strong {
+    display: block;
+    color: var(--dark-coffee);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.info-item span {
+    color: var(--text-muted);
+}
+
+.contact-form {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius-m);
+    box-shadow: 0 10px 30px rgba(44, 26, 17, 0.02);
+    border: 1px solid rgba(44, 26, 17, 0.04);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-coffee);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(44, 26, 17, 0.12);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    background-color: var(--bg-cream);
+    color: var(--dark-coffee);
+    transition: var(--transition-smooth);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    background-color: var(--white);
+}
+
+.submit-btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* --- Clean Modern Footer --- */
+.footer {
+    background-color: var(--dark-coffee);
+    color: var(--light-tan);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.footer-logo span {
+    color: var(--accent-gold);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    opacity: 0.8;
+}
+
+/* --- Media Queries (Fully Responsive Adjustments) --- */
+@media (max-width: 992px) {
+    .about-container, .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .about-image img {
+        height: 360px;
+    }
+    .hero-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links, .nav-btn {
+        display: none; /* Simplifies layout for beginners without complex JS toggles */
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
 <!DOCTYPE html>
-<!-- saved from url=(0057)http://127.0.0.1:5500/html/index1.html/index%20coffe.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Brew & Co. | Premium Coffeehouse</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
 
-
-
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Perfect Brew | Premium Cafe</title>
-    <style>
-        /* --- CSS STYLES --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary-color: #c5a880; /* Gold/Bronze */
-            --bg-dark: #121212;
-            --bg-light: #1a1a1a;
-            --text-light: #ffffff;
-            --text-muted: #a0a0a0;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Navigation Bar */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(18, 18, 18, 0.95);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://unsplash.com') no-repeat center center/cover;
-        }
-
-        .hero-content h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
-        }
-
-        .hero-content h1 span {
-            color: var(--primary-color);
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--bg-dark);
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #b3966e;
-            transform: translateY(-2px);
-        }
-
-        /* About Section */
-        .about {
-            padding: 100px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 36px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        /* Menu Section */
-        .menu-section {
-            background-color: var(--bg-light);
-            padding: 100px 20px;
-        }
-
-        .menu-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .menu-item {
-            background-color: var(--bg-dark);
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid rgba(197, 168, 128, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .item-details h3 {
-            margin-bottom: 5px;
-        }
-
-        .item-details p {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        .item-price {
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--bg-dark);
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(197, 168, 128, 0.1);
-            color: var(--text-muted);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none; /* Mobile menu styling can be added via JS */
-            }
-            .hero-content h1 {
-                font-size: 36px;
-            }
-        }
-    </style>
-
-
-
-    <!-- Header / Navigation -->
-    <header>
+    <!-- Header & Navigation -->
+    <header class="navbar">
         <div class="nav-container">
-            <div class="logo">Brew &amp; Co.</div>
-            <nav>
-                <ul>
-                    <li><a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#home">Home</a></li>
-                    <li><a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#about">About</a></li>
-                    <li><a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#menu">Menu</a></li>
-                    <li><a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#contact">Contact</a></li>
-                     
-    
-
-                </ul>
+            <a href="#home" class="logo">Brew & Co<span>.</span></a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
             </nav>
+            <a href="#menu" class="cta-btn nav-btn">View Menu</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Start Your Day With <span>Perfect Coffee</span></h1>
-            <p>Freshly brewed coffee made from premium handpicked beans. Experience the ultimate taste and aroma in every single sip.</p>
-            <a href="http://127.0.0.1:5500/html/index1.html/index%20coffe.html#menu" class="btn">View Our Menu</a>
+            <span class="hero-subtitle">Crafted with Passion</span>
+            <h1 class="hero-title">Experience the Art of Premium Coffee</h1>
+            <p class="hero-description">Welcome to Brew & Co., where exceptional ethically sourced beans meet modern artisan roasting techniques for the perfect morning ritual.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="cta-btn primary-btn">Explore Our Menu</a>
+                <a href="#about" class="cta-btn secondary-btn">Our Story</a>
+            </div>
         </div>
     </section>
- <!-- image Section -->
-    <section id=" image" class=" image">
-     <div class="image-container"> 
-        <h2 class="section-title"> Your image </h2>
-        <img src="./index coffe_files/coffe photo.jpg" alt="" width="500px" height="400px">
 
-    </div>
+    <!-- Cafe Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Brew & Co.</h2>
+                <p>We pride ourselves on providing a sophisticated and calculated coffee experience.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Artisan Beans</h3>
+                    <p>100% organic, single-origin Arabica beans sourced directly from sustainable fair-trade farms globally.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☕</div>
+                    <h3>Expert Roasting</h3>
+                    <p>Meticulously roasted in small batches daily to draw out rich, complex profiles and aroma notes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🥐</div>
+                    <h3>Fresh Pastries</h3>
+                    <p>A premium curation of daily baked French pastries, tarts, and savory morning pairings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section id="about" class="about">
-        <h2 class="section-title">Our Story</h2>
-        <p>Hum sirf coffee nahi bechte, hum ek experience dete hain. Hamaare yahan har ek cup ko poori shiddat aur perfection ke saath brew kiya jata hai taaki aapko mile sabse shaandar taste. Ek baar aaiye aur farq mehsoos kijiye.</p>
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="https://unsplash.com" alt="Interior roasting station at Brew and Co">
+            </div>
+            <div class="about-content">
+                <span class="section-tag">Since 2024</span>
+                <h2>Our Devotion to the Perfect Roast</h2>
+                <p>At Brew & Co., we treat coffee making as an intricate craft. Every pour, extraction profile, and steam alignment is overseen by certified baristas dedicated to delivering standard-setting quality.</p>
+                <p>Whether you need a quiet morning corner to focus, a quick premium pickup, or an immersion into rich espresso tasting flights, we provide an intentional space tailored for you.</p>
+                <a href="#features" class="cta-btn primary-btn">Discover More</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Menu Section -->
     <section id="menu" class="menu-section">
-        <div class="menu-container">
-        <h2>class="section-title" style="text-align: center;"&gt;Popular Menu</h2>
-            <div class="menu-grid"><h2 <!--="" item="" 1="" --="">
-                <div class="menu-item">
-                    <div class="item-details">
-                        <h3>Espresso</h3>
-                        <p>Rich, full-bodied espresso shot.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Signature Curation</h2>
+                <p>Handcrafted hot beverages, chilled extractions, and small plates made fresh to order.</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Menu Item 1 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper">
+                        <img src="https://unsplash.com" alt="Fresh Espresso Latte Art">
                     </div>
-                    <div class="item-price">₹120</div>
-                </div>
-                <!-- Item 2 -->
-                <div class="menu-item">
-                    <div class="item-details">
-                        <h3>Cappuccino</h3>
-                        <p>Espresso with steamed milk foam.</p>
+                    <div class="menu-details">
+                        <div class="menu-meta">
+                            <h3>Classic Cafe Latte</h3>
+                            <span class="price">$5.50</span>
+                        </div>
+                        <p class="menu-desc">Double espresso shot poured over velvety, smooth steamed microfoam.</p>
                     </div>
-                    <div class="item-price">₹160</div>
                 </div>
-                <!-- Item 3 -->
-                <div class="menu-item">
-                    <div class="item-details">
-                        <h3>Cafe Latte</h3>
-                        <p>Smooth espresso with creamy milk.</p>
+                <!-- Menu Item 2 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper">
+                        <img src="https://unsplash.com" alt="Cortado Espresso Drink">
                     </div>
-                    <div class="item-price">₹180</div>
-                </div>
-                <!-- Item 4 -->
-                <div class="menu-item">
-                    <div class="item-details">
-                        <h3>Iced Americano</h3>
-                        <p>Chilled espresso shot over ice.</p>
+                    <div class="menu-details">
+                        <div class="menu-meta">
+                            <h3>Artisan Cortado</h3>
+                            <span class="price">$4.75</span>
+                        </div>
+                        <p class="menu-desc">Perfectly balanced 1:1 ratio of robust espresso and dense warm milk.</p>
                     </div>
-                    <div class="item-price">₹140</div>
                 </div>
-            </h2></div>
+                <!-- Menu Item 3 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper">
+                        <img src="https://unsplash.com" alt="Cold Brew Coffee over ice">
+                    </div>
+                    <div class="menu-details">
+                        <div class="menu-meta">
+                            <h3>Signature Cold Brew</h3>
+                            <span class="price">$6.00</span>
+                        </div>
+                        <p class="menu-desc">Steeped slowly for 18 hours, presenting an exceptionally crisp, low-acid finish.</p>
+                    </div>
+                </div>
+                <!-- Menu Item 4 -->
+                <div class="menu-card">
+                    <div class="menu-img-wrapper">
+                        <img src="https://unsplash.com" alt="Flaky Croissant pastry">
+                    </div>
+                    <div class="menu-details">
+                        <div class="menu-meta">
+                            <h3>Almond Butter Croissant</h3>
+                            <span class="price">$5.00</span>
+                        </div>
+                        <p class="menu-desc">House-baked flaky golden pastry filled with rich traditional almond frangipane.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2>Visit Our Space</h2>
+                <p>Have questions, special event requests, or wholesale bean ordering inquiries? Drop by or message our team directly.</p>
+                <div class="info-list">
+                    <div class="info-item">
+                        <strong>Hours of Operation:</strong>
+                        <span>Mon - Fri: 7:00 AM - 6:00 PM<br>Sat - Sun: 8:00 AM - 7:00 PM</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Connect Online:</strong>
+                        <span>Follow us on social channels @BrewAndCo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" rows="4" required placeholder="Tell us how we can help..."></textarea>
+                    </div>
+                    <button type="submit" class="cta-btn primary-btn submit-btn">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <p>© 2026 Brew &amp; Co. Cafe. All Rights Reserved.</p>
-        <p style="margin-top: 10px; font-size: 14px;">Open Daily: 08:00 AM - 11:00 PM</p>
-        <p>xyz2233@gmail.com</p>
-        <p>phone number : xxxxxxxxxx </p>
-        <p>instagram id : ______sachin__001</p>
-        <p> telegram id : @hfhrebrv </p>
-        <p>linkdom : ggfrgfyrbv</p>
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-logo">Brew & Co<span>.</span></p>
+            <p class="copyright">&copy; 2026 Brew & Co. Cafe. All rights reserved. Designed with premium modern aesthetics.</p>
+        </div>
     </footer>
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+</body>
+</html>
 
 
-
-
-</section></section></body></html>
